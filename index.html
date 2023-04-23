@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <a href="javascript:openWindow('/login', 'Login to do stuff', 880, 380);"
+      >Login with popip</a
+    ><br />
+    <script>
+      function openWindow(url, title, w, h) {
+        var popup = window.open(
+          url,
+          title,
+          "width=" +
+            w +
+            ", height=" +
+            h +
+            ", modal=no, resizable=no, toolbar=no, menubar=no," +
+            "scrollbars=no, alwaysRaise=yes"
+        );
+        popup.resizeBy(0, 50);
+      }
+    </script>
+    <script>
+      window.opener.location.href = "/";
+      window.close();
+    </script>
+  </body>
+</html>
